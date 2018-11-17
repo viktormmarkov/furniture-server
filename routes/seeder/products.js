@@ -102,16 +102,15 @@ const products = [{
         "url": "https://videnov.bg/kuhnya-darina-6"
     }
 ];
-mongodb: //heroku_3990rl23:vjqe9b4dlqc92rg5pdlhkii7pv@ds229468.mlab.com:29468/heroku_3990rl23
 router.get('/', function (req, res, next) {
     for (let i = 0; i < products.length; i++) {
         let product = new Product({
             name: products[i].title,
             price: products[i].price,
-            category: 'Кухня',
             image: products[i].image,
+            url: products[i].url,
+            category: 'Кухня',
             vendor: 'Виденов',
-            url: products[i].url
         });
 
         product.save();
