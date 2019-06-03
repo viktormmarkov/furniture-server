@@ -102,7 +102,7 @@ const products = [{
         "url": "https://videnov.bg/kuhnya-darina-6"
     }
 ];
-router.get('/', function (req, res, next) {
+router.get('/seeder', function (req, res, next) {
     for (let i = 0; i < products.length; i++) {
         let product = new Product({
             name: products[i].title,
